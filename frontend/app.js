@@ -1,11 +1,17 @@
+const peraWallet = new PeraWalletConnect();
 let walletAddress = null;
 
-function connectWallet() {
-  // Temporary demo wallet address
-  walletAddress = "TESTNET_WALLET_ADDRESS_123";
+async function connectWallet() {
+  try {
+    const accounts = await peraWallet.connect();
+    walletAddress = accounts[0];
 
-  document.getElementById("status").innerText =
-    "Wallet connected: " + walletAddress;
+    document.getElementById("status").innerText =
+      "Wallet connected: " + walletAddress;
+  } catch (error) {
+    console.log(error);
+    alert("Wallet connection cancelled");
+  }
 }
 
 function buyTicket() {
@@ -13,7 +19,7 @@ function buyTicket() {
     alert("Please connect wallet first");
     return;
   }
-  alert("Ticket purchase process will start here");
+  alert("Next step: NFT ticket minting");
 }
 
 function verifyTicket() {
@@ -21,5 +27,5 @@ function verifyTicket() {
     alert("Please connect wallet first");
     return;
   }
-  alert("Ticket verification will happen here");
+  alert("Next step: ticket verification");
 }
