@@ -4,11 +4,14 @@
   <title>Campus Event Ticketing</title>
 </head>
 <body>
-  <h1>Campus Event Ticketing</h1>
-  <p>This project uses Algorand NFTs for event tickets.</p>
+  <h1>Campus Event Ticketing (Algorand)</h1>
 
-  <button>Connect Wallet</button>
-  <button>Buy Ticket</button>
-  <button>Verify Ticket</button>
+  <button onclick="connectWallet()">Connect Wallet</button>
+  <button onclick="buyTicket()">Buy Ticket</button>
+  <button onclick="verifyTicket()">Verify Ticket</button>
+
+  <p id="status">Status: Not connected</p>
+
+  <script src="app.js"></script>
 </body>
 </html>
