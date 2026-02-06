@@ -1,13 +1,25 @@
-// Frontend logic for Campus Event Ticketing
+let walletAddress = null;
 
 function connectWallet() {
-  alert("Wallet connection will be implemented here");
+  // Temporary demo wallet address
+  walletAddress = "TESTNET_WALLET_ADDRESS_123";
+
+  document.getElementById("status").innerText =
+    "Wallet connected: " + walletAddress;
 }
 
 function buyTicket() {
-  alert("Ticket purchase logic will be implemented here");
+  if (!walletAddress) {
+    alert("Please connect wallet first");
+    return;
+  }
+  alert("Ticket purchase process will start here");
 }
 
 function verifyTicket() {
-  alert("Ticket verification logic will be implemented here");
+  if (!walletAddress) {
+    alert("Please connect wallet first");
+    return;
+  }
+  alert("Ticket verification will happen here");
 }
